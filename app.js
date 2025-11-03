@@ -197,7 +197,40 @@ app.get("/process", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  res.render("includes/contact.ejs", { page: "contact" });
+  const developers = [
+    {
+      name: "Adarsh Kumar",
+      img: "/pics/adarsh-kumar.jpg",
+      linkedin: "https://www.linkedin.com/in/adarsh-kumar-6221762b4/",
+      github: "https://github.com/Its-Adarshkumar"
+    },
+    {
+      name: "Kamya Gurnani",
+      img: "/pics/kamya-gurnani.jpg",
+      linkedin: "https://www.linkedin.com/in/kamya-gurnani-476281220/",
+      github: "https://github.com/kamya-20"
+    },
+    {
+      name: "Yana Malhotra",
+      img: "/pics/yana-malhotra.jpg",
+      linkedin: "https://www.linkedin.com/in/yana-malhotra-427b61293/",
+      github: "https://github.com/yana-malhotra27"
+    },
+    {
+      name: "Kanishq Verma",
+      img: "/pics/kanishq-verma.png",
+      linkedin: "https://www.linkedin.com/in/kanishqverma/",
+      github: "https://github.com/KanishqVerma"
+    },
+    {
+      name: "Sahil Chadha",
+      img: "/pics/sahil-chadha.jpg",
+      linkedin: "https://www.linkedin.com/in/sahil-chadha-946482315/",
+      github: "https://github.com/Sahilchadha07"
+    }
+  ];
+
+  res.render("includes/contact.ejs", { page: "contact", developers });
 });
 
 app.get("/hrfind", (req, res) => {

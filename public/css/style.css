@@ -676,3 +676,14 @@ footer {
     height: 90px;
   }
 }
+
+/* Flash message */
+.flash-container {
+  position: fixed;
+  top: 70px; /* adjust depending on navbar height */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050; /* above navbar */
+  width: auto;
+  max-width: 600px;
+}
