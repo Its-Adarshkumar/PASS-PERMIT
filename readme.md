@@ -92,26 +92,7 @@ cd PASS-PERMIT
 npm install
 ```
 
-### 3. Configure environment variables
-Create a `.env` file in the project root with the following (adjust names to match what `app.js` expects):
-
-```env
-MONGO_URI=your_mongodb_connection_string
-SESSION_SECRET=your_session_secret
-CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-PORT=3000
-```
-
-### 4. (Optional) Seed initial data
-To create a default HR/admin account and/or sample pass data:
-```bash
-node seedHR.js
-node seedPass.js
-```
-
-### 5. Run the app
+### 3. Run the app
 ```bash
 npm start
 ```
@@ -131,12 +112,11 @@ The app will be available at `http://localhost:3000` (or your configured `PORT`)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome. Feel free to check the [issues page](https://github.com/Its-Adarshkumar/PASS-PERMIT/issues) or open a pull request.
-
-## 📄 License
-
-This project is licensed under the **ISC License**.
+Contributions, issues, and feature requests are welcome.
 
 ## 👤 Author
 
 **Adarsh Kumar** — [GitHub](https://github.com/Its-Adarshkumar)
+**Kanishq Verma** — [GitHub](https://github.com/KanishqVermar)
+**Yana Malhotra** — [GitHub](https://github.com/yana-malhotra27)
+**Kamya Gurnani** — [GitHub](https://github.com/kamya-20)
