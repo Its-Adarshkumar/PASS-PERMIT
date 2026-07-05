@@ -89,17 +89,20 @@ async function generatePass(passData) {
 
     const qrCodeImage = await qrcode.toDataURL(qrCodeData);
 
-        // Read the stamp image
-        const stampImage = await fs.readFile('stamp.jpg', 'base64');
+    // Read the stamp image
+    // const stampImage = await fs.readFile('stamp.jpg', 'base64');
+    const stampImage = await fs.readFile(path.join(__dirname, "stamp.jpg"), "base64");
+    const headerImage = await fs.readFile(path.join(__dirname, "pass_header.jpg"), "base64");
 
-        // Add generated images to the data object
-        passData.qrCodeImage = qrCodeImage;
-        passData.stampImage = stampImage;
-        
-        // Compile the HTML template with the final data
-        const templateHtml = await fs.readFile('pass_template_final.html', 'utf-8');
-        const template = handlebars.compile(templateHtml);
-        const finalHtml = template(passData);
+    // Add generated images to the data object
+    passData.qrCodeImage = qrCodeImage;
+    passData.stampImage = stampImage;
+    passData.headerImage = headerImage;
+
+    // Compile the HTML template with the final data
+    const templateHtml = await fs.readFile(path.join(__dirname, "pass_template_final.html"), "utf-8");
+    const template = handlebars.compile(templateHtml);
+    const finalHtml = template({ ...passData, date: new Date().toLocaleDateString("hi-IN") });
 
     // Generate the PDF using Puppeteer
     console.log("Generating PDF...");
@@ -143,18 +146,21 @@ module.exports = { generatePass };
 
 //   const formatDate = (date) => `${String(date.getDate()).padStart(2, "0")}.${String(date.getMonth() + 1).padStart(2, "0")}.${date.getFullYear()}`;
 
-    // 3. Read the header image and prepare the data object
-    const headerImage = await fs.readFile('pass_header.jpg', 'base64');
-    
-    const passData = {
-        headerImage: headerImage,
-        department: 'IT Division, NR Office',
-        issueDate: formatDate(issueDate),
-        expiryDate: formatDate(expiryDate),
-        validity: `${validityInMonths} Months`,
-        visitors: [visitorData]
-    };
-    
-    // 4. Call the main function with the data
-    await generatePass(passData);
-})();
+//   // 3. Read the header image and prepare the data object
+
+//   // const headerImage = await fs.readFile('pass_header.jpg', 'base64');
+
+//   const headerImage = await fs.readFile(path.join(__dirname, "pass_header.jpg"), "base64");
+
+//   const passData = {
+//     headerImage: headerImage,
+//     department: "IT Division, NR Office",
+//     issueDate: formatDate(issueDate),
+//     expiryDate: formatDate(expiryDate),
+//     validity: `${validityInMonths} Months`,
+//     visitors: [visitorData],
+//   };
+
+//   // 4. Call the main function with the data
+//   await generatePass(passData);
+// })();
