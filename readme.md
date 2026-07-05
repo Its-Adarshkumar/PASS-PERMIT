@@ -117,6 +117,6 @@ Contributions, issues, and feature requests are welcome.
 ## 👤 Author
 
 **Adarsh Kumar** — [GitHub](https://github.com/Its-Adarshkumar)
-**Kanishq Verma** — [GitHub](https://github.com/KanishqVermar)
+**Kanishq Verma** — [GitHub](https://github.com/KanishqVerma)
 **Yana Malhotra** — [GitHub](https://github.com/yana-malhotra27)
 **Kamya Gurnani** — [GitHub](https://github.com/kamya-20)
