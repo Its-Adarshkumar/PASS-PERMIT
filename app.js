@@ -175,6 +175,9 @@ function isUser(req, res, next) {
 //     currUser: req.user
 //   });
 // });
+app.get("/", (req, res) => {
+  res.redirect("/home");
+});
 
 app.get("/home", (req, res) => {
   res.render("layouts/boilerplate.ejs", { page: "home" });
