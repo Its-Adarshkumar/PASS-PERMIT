@@ -176,7 +176,7 @@ function isUser(req, res, next) {
 //   });
 // });
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
   res.render("layouts/boilerplate.ejs", { page: "home" });
 });
 
