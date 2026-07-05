@@ -175,6 +175,9 @@ function isUser(req, res, next) {
 //     currUser: req.user
 //   });
 // });
+app.get("/", (req, res) => {
+  res.redirect("/home");
+});
 
 app.get("/home", (req, res) => {
   res.render("layouts/boilerplate.ejs", { page: "home" });
@@ -353,7 +356,7 @@ app.post("/signup", async (req, res) => {
 
 
 app.post("/login", passport.authenticate("local", { failureRedirect: "/login", failureFlash: true }), (req, res) => {
-  console.log("After login, req.user:", req.user); // ✅ should print once
+//console.log("After login, req.user:", req.user); // ✅ should print once
 
   if (req.user.role === "hr") {
     req.flash("Success", "You are logged in as HR");
